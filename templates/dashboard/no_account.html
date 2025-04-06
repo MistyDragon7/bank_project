@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-4 text-center">
-  <h2>Oops! No Account Found</h2>
-  <p>You are logged in, but no bank account is associated with your user.</p>
-  <p>Please contact support or an administrator if this is unexpected.</p>
-</div>
+    <div class="container mt-5">
+    <div class="alert alert-warning">
+        <h4 class="alert-heading">No Account Found</h4>
+        <p>Your user account does not have an associated bank account.</p>
+        <hr>
+        <p>Please contact the administrator or try registering again.</p>
+    </div>
 {% endblock %}

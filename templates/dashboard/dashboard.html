@@ -1,32 +1,27 @@
+<!-- templates/dashboard/dashboard.html -->
 {% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
 {% block content %}
-    <h2>Dashboard</h2>
+    <h2>Your Dashboard</h2>
     <p><strong>Account Number:</strong> {{ account.account_number }}</p>
-    <p>Balance: ${{ account.balance }}</p>
-    <h3>Last 5 Transactions</h3>
-    {% if transactions %}
-        <table>
-            <thead>
-            <tr>
-                <th>To</th>
-                <th>Amount</th>
-                <th>Type</th>
-                <th>Timestamp</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for txn in transactions %}
-                <tr>
-                    <td>{{ txn.to_account.account_number }}</td>
-                    <td>{{ txn.amount }}</td>
-                    <td>{{ txn.type }}</td>
-                    <td>{{ txn.timestamp }}</td>
-                </tr>
+    <p><strong>Balance:</strong> ${{ account.balance }}</p>
+
+    <h4 class="mt-4">Recent Transactions</h4>
+    {% if recent_transactions %}
+        <ul class="list-group">
+            {% for txn in recent_transactions %}
+                <li class="list-group-item">
+                    {{ txn.timestamp|date:"M d, Y H:i" }} -
+                    {{ txn.type|title }} of ${{ txn.amount }}
+                    {% if txn.to_account == account %}
+                        (Received)
+                    {% elif txn.from_account == account %}
+                        (Sent)
+                    {% endif %}
+                </li>
             {% endfor %}
-            </tbody>
-        </table>
+        </ul>
     {% else %}
-        <p>No recent transactions found.</p>
+        <p class="text-muted">No recent transactions found.</p>
     {% endif %}
-    <a href="/transfer/">Transfer</a> | <a href="/loan/">Apply for Loan</a>
 {% endblock %}

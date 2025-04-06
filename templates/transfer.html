@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Transfer Money</h2>
-<form method="post">{% csrf_token %}
-<input name="to_account" placeholder="To Account Number"><br>
-<input name="amount" placeholder="Amount" type="number"><br>
-<button type="submit">Transfer</button>
-</form>
-{% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+    <div class="container mt-5">
+        <div class="card p-4 shadow">
+            <h2 class="mb-4 text-center">Transfer Money</h2>
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">To Account Number</label>
+                    <input type="text" name="to_account" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Amount</label>
+                    <input type="number" step="0.01" name="amount" class="form-control" required>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Transfer</button>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock %}

@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e818384-e073-4f52-971e-67b8b9a601e1" name="Changes" comment="1st iteration">
-      <changelist_data name="MistyDragon7" email="120657456+mistydragon7@users.noreply.github.com" automatic="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/dashboard.html" afterDir="false" />
+    <list default="true" id="3e818384-e073-4f52-971e-67b8b9a601e1" name="Changes" comment="2nd iteration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bank_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/no_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/no_account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loan.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/transfer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/transfer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +28,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MistyDragon7"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MistyDragon7/bank_project.git",
+    "accountId": "e4e4852d-d024-43b7-a4f1-aaf04bcd5fd8"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 4
 }]]></component>
@@ -106,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743952315650</updated>
-      <workItem from="1743952316693" duration="9630000" />
+      <workItem from="1743952316693" duration="10714000" />
     </task>
     <task id="LOCAL-00001" summary="1st iteration">
       <option name="closed" value="true" />
@@ -124,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743956997533</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2nd iteration">
+      <option name="closed" value="true" />
+      <created>1743964409755</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743964409755</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +152,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st iteration" />
-    <option name="LAST_COMMIT_MESSAGE" value="1st iteration" />
+    <MESSAGE value="2nd iteration" />
+    <option name="LAST_COMMIT_MESSAGE" value="2nd iteration" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

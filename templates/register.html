@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Register</h2>
-<form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Register</button></form>
+    <div class="container mt-5">
+        <div class="card p-4 shadow">
+            <h2 class="mb-4 text-center">Register</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock %}
