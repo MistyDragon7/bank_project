@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 import dj_database_url
 from decouple import config
 
