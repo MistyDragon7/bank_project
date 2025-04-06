@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 import dj_database_url
 from decouple import config
@@ -21,8 +20,6 @@ DATABASES = {
 }
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
