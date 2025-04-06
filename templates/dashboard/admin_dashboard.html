@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-3">Admin Dashboard</h2>
+  <p>Welcome, {{ request.user.username }}. Here are the pending loan requests:</p>
+
+  {% if pending_loans %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Amount</th>
+          <th>Purpose</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for loan in pending_loans %}
+          <tr>
+            <td>{{ loan.user.username }}</td>
+            <td>{{ loan.amount }}</td>
+            <td>{{ loan.purpose }}</td>
+            <td>{{ loan.status }}</td>
+            <td>
+              <form action="{% url 'approve_loan' loan.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button class="btn btn-success btn-sm">Approve</button>
+              </form>
+              <form action="{% url 'reject_loan' loan.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button class="btn btn-danger btn-sm">Reject</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No pending loans right now.</p>
+  {% endif %}
+</div>
+{% endblock %}

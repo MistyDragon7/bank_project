@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Dashboard</h2>
+<p>Balance: ${{ account.balance }}</p>
+<h3>Last 5 Transactions</h3>
+<ul>{% for t in transactions %}<li>{{ t.timestamp }} - ${{ t.amount }} - {{ t.type }}</li>{% endfor %}</ul>
+<a href="/transfer/">Transfer</a> | <a href="/loan/">Apply for Loan</a>
+{% endblock %}
