@@ -47,7 +47,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bank_project.wsgi.application'
-
+LOGIN_URL = '/login/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

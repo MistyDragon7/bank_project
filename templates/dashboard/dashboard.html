@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Dashboard</h2>
+    <p><strong>Account Number:</strong> {{ account.account_number }}</p>
+    <p>Balance: ${{ account.balance }}</p>
+    <h3>Last 5 Transactions</h3>
+    {% if transactions %}
+        <table>
+            <thead>
+            <tr>
+                <th>To</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Timestamp</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for txn in transactions %}
+                <tr>
+                    <td>{{ txn.to_account.account_number }}</td>
+                    <td>{{ txn.amount }}</td>
+                    <td>{{ txn.type }}</td>
+                    <td>{{ txn.timestamp }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No recent transactions found.</p>
+    {% endif %}
+    <a href="/transfer/">Transfer</a> | <a href="/loan/">Apply for Loan</a>
+{% endblock %}

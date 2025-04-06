@@ -1,5 +1,6 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db import models
+
 
 class User(AbstractUser):
     is_admin = models.BooleanField(default=False)
@@ -10,7 +11,8 @@ class Account(models.Model):
     balance = models.DecimalField(max_digits=12, decimal_places=2)
 
 class Transaction(models.Model):
-    from_account = models.ForeignKey(Account, related_name='sent_transactions', on_delete=models.SET_NULL, null=True)
+    from_account = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True, blank=True,
+                                     related_name='outgoing_transactions')
     to_account = models.ForeignKey(Account, related_name='received_transactions', on_delete=models.SET_NULL, null=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     timestamp = models.DateTimeField(auto_now_add=True)

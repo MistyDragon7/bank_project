@@ -1,17 +1,26 @@
-from django.shortcuts import render, redirect
+from decimal import Decimal
+
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
-from .models import Account, Transaction, Loan
+
 from .forms import RegisterForm, LoanForm
-from django.utils import timezone
+from .models import Account, Transaction
+
 
 @login_required
 def dashboard(request):
-    account = Account.objects.get(user=request.user)
-    transactions = Transaction.objects.filter(from_account=account).order_by('-timestamp')[:5]
-    return render(request, 'dashboard.html', {'account': account, 'transactions': transactions})
+    # If the user is a superuser (admin), skip Account-related stuff
+    if request.user.is_superuser:
+        return render(request, 'dashboard/admin_dashboard.html')  # or wherever your admin-specific template is
+
+    try:
+        account = Account.objects.get(user=request.user)
+    except Account.DoesNotExist:
+        return render(request, 'dashboard/no_account.html')  # or handle gracefully however you like
+
+    return render(request, 'dashboard/dashboard.html', {'account': account})
 def home(request):
     return render(request, 'home.html')
 
@@ -19,7 +28,7 @@ def home(request):
 def transfer_money(request):
     if request.method == 'POST':
         to_acc_no = request.POST['to_account']
-        amount = float(request.POST['amount'])
+        amount = Decimal(request.POST['amount'])
         from_account = Account.objects.get(user=request.user)
         try:
             to_account = Account.objects.get(account_number=to_acc_no)
